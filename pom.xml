@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 	<groupId>com.purvar</groupId>
-    <artifactId>keycloak-services-theme</artifactId>
+    <artifactId>keycloak-services-locale</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>keycloak-services-theme</name>
+    <name>keycloak-services-locale</name>
     <description />
 	<properties>
         <maven.compiler.target>1.8</maven.compiler.target>
