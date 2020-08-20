@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jboss-deployment-structure>
     <deployment>
-        <module-alias name="deployment.keycloak-services-social-qywx"/>
+        <module-alias name="deployment.keycloak-services-locale"/>
         <dependencies>
             <module name="javax.persistence.api"/>
             <module name="javax.servlet.api"/>
