@@ -46,7 +46,6 @@ public class PurvarLocaleSeletorProvider implements LocaleSelectorProvider {
 
     private Locale getUserLocale(RealmModel realm, AuthenticationSessionModel session, UserModel user, HttpHeaders requestHeaders) {
         Locale locale;
-        //登录页面用户选择
         locale = getUserSelectedLocale(realm, session);
         if (locale != null) {
             return locale;
