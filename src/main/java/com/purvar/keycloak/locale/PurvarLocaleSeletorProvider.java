@@ -27,7 +27,7 @@ public class PurvarLocaleSeletorProvider implements LocaleSelectorProvider {
 		HttpHeaders requestHeaders = session.getContext().getRequestHeaders();
         AuthenticationSessionModel session = this.session.getContext().getAuthenticationSession();
         Locale acceptLanguage = getAcceptLanguageHeaderLocale(realm, requestHeaders);
-        if (!realm.isInternationalizationEnabled()) {
+        if (!realm.isInternationalizationEnabled() && null !=acceptLanguage) {
             return acceptLanguage;
         }
         
