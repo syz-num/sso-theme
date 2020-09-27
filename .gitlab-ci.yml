@@ -1,0 +1,71 @@
+image: hub.purvar.office/jhipster/jhipster:v6.10.1
+
+cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+        - .maven/
+        - .mvn/
+
+variables:
+    MVNW_REPOURL: 'http://nexus.purvar.office/repository/maven-public'
+    MVNW_VERBOSE: 'true'
+
+stages:
+    - analyze
+    - package
+    - deploy
+before_script:
+    - export MAVEN_USER_HOME=`pwd`/.maven
+
+sonar-analyze:
+    stage: analyze
+    tags:
+        - ptc-runner
+    only:
+        # - tags
+        - web
+    except:
+        variables:
+            - $ANALYZE == "false"
+    # dependencies:
+    #     - maven-test
+    script:
+        - ./mvnw -ntp compile sonar:sonar -Dsonar.host.url=http://sonarqube.purvar.office -Dsonar.login=$SONAR_TOKEN -Dsonar.projectVersion=pipline-$CI_PIPELINE_ID -Dmaven.repo.local=$MAVEN_USER_HOME
+    allow_failure: true
+
+maven-package:
+    stage: package
+    tags:
+        - ptc-runner
+    only:
+        - tags
+        - web
+    script:
+        - ./mvnw -ntp package -DskipTests -Dmaven.repo.local=$MAVEN_USER_HOME
+    artifacts:
+        paths:
+            - target/*.jar
+            - target/classes
+        expire_in: 1 day
+
+production-deploy:
+    stage: deploy
+    tags:
+        - ptc-runner
+    only:
+        refs:
+            - web
+        variables:
+            - $RELEASE == "production"
+    environment:
+        name: production
+        url: http://id.purvar.office
+    image: hub.purvar.office/kroniak/ssh-client
+    before_script:
+        - eval $(ssh-agent -s)
+        - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+    script:
+        - scp -r -o StrictHostKeyChecking=no target/keycloak-services-social-qywx*.jar root@172.29.233.131:/var/lib/docker/volumes/fore-c-sso_keycloak/_data/standalone/deployments/
+
