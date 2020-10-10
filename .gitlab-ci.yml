@@ -69,3 +69,24 @@ production-deploy:
     script:
         - scp -r -o StrictHostKeyChecking=no target/keycloak-services-locale*.jar root@172.29.233.131:/usr/local/com-purvar-id/keycloak/standalone/deployments
 
+UT-deploy:
+    stage: deploy
+    tags:
+        - ptc-runner
+    only:
+        refs:
+            - web
+        variables:
+            - $RELEASE == "ut"
+    environment:
+        name: ut
+        url: https://forec-id-dev.internal.purvar.com:7443/
+    image: hub.purvar.office/kroniak/ssh-client
+    before_script:
+        - eval $(ssh-agent -s)
+        - echo "$SSH_PRIVATE_KEY_UT" | tr -d '\r' | ssh-add -
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+    script:
+        - scp -r -o StrictHostKeyChecking=no target/keycloak-services-locale*.jar root@172.29.225.216:/usr/local/com-purvar-id/keycloak/standalone/deployments
+
