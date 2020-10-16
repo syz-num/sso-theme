@@ -1,20 +1,19 @@
 package com.purvar.keycloak.locale;
 
-import org.keycloak.locale.LocaleSelectorProvider;
-import org.keycloak.models.RealmModel;
-import org.keycloak.models.UserModel;
-import org.jboss.logging.Logger;
-import org.keycloak.models.KeycloakSession;
-import org.keycloak.sessions.AuthenticationSessionModel;
-import javax.ws.rs.core.Cookie;
-import javax.ws.rs.core.HttpHeaders;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-public class PurvarLocaleSeletorProvider implements LocaleSelectorProvider {
+import javax.ws.rs.core.Cookie;
+import javax.ws.rs.core.HttpHeaders;
 
-	private static final Logger logger = Logger.getLogger(LocaleSelectorProvider.class);
+import org.keycloak.locale.LocaleSelectorProvider;
+import org.keycloak.models.KeycloakSession;
+import org.keycloak.models.RealmModel;
+import org.keycloak.models.UserModel;
+import org.keycloak.sessions.AuthenticationSessionModel;
+
+public class PurvarLocaleSeletorProvider implements LocaleSelectorProvider {
 
     private KeycloakSession session;
     
