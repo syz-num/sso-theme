@@ -67,7 +67,7 @@ production-deploy:
         - mkdir -p ~/.ssh
         - chmod 700 ~/.ssh
     script:
-        - scp -r -o StrictHostKeyChecking=no target/keycloak-services-locale*.jar root@172.29.233.131:/usr/local/com-purvar-id/keycloak/standalone/deployments
+        - scp -r -o StrictHostKeyChecking=no target/keycloak-services-locale*.jar root@172.29.233.130:/usr/local/com-purvar-id/keycloak/standalone/deployments
 
 dev-deploy:
     stage: deploy
