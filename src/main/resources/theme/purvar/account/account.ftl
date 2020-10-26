@@ -10,14 +10,15 @@
             <#--  <tr><td>  -->
                 <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
             <#--  </td></tr>  -->
-            <tr><td>
-                <#if !realm.registrationEmailAsUsername>
-                <div class=" ${messagesPerField.printIfExists('username','has-error')}">
-                    <label for="username" class="control-label">${msg("username")}<span class="required">*</span></label> <#if realm.editUsernameAllowed></#if>
-                    <input type="text"  id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')}"/>
-                </div>
-                </#if>
-            </td></tr>
+            
+            <#if !realm.registrationEmailAsUsername>
+                <tr><td>
+                    <div class=" ${messagesPerField.printIfExists('username','has-error')}">
+                        <label for="username" class="control-label">${msg("username")}<span class="required">*</span></label> <#if realm.editUsernameAllowed></#if>
+                     <input type="text"  id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')}"/>
+                    </div>
+                </td></tr>
+            </#if>
 
             <tr><td>
                 <div class=" ${messagesPerField.printIfExists('email','has-error')}">

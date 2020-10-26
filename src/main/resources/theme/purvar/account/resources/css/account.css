@@ -44,6 +44,7 @@ header .navbar {
 .container {
     height: 100%;
     padding: 0;
+    /* margin: 0; */
 }
 
 .content-area {
@@ -313,18 +314,20 @@ hr + .form-horizontal {
     letter-spacing: normal;
     text-align: center;
     color: #000000;
-    /* padding: 10px; */
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .navbar-bottom ul li :hover,
-.navbar-bottom ul li :focus {
+.navbar-bottom ul li :focus,
+.navbar-bottom ul li :active{
     text-decoration: none;
-    color: #777777;
+    background-color:rgb(249, 249, 249);
 }
 .navbar-bottom ul li.active a {
-    font-weight: bold;
+    color: #0088ce;
+    background-color: rgb(249, 249, 249);
     background-repeat: no-repeat;
     background-position: right center;
 }
@@ -415,7 +418,8 @@ tr{border-bottom: #959595 solid 1.1px;}
 	line-height: 1;
 	letter-spacing: normal;
 	text-align: right;
-	color: #000000;
+    color: #000000;
+    outline: none;
 }
 
 .action {
@@ -448,29 +452,47 @@ tr{border-bottom: #959595 solid 1.1px;}
     top: 0;
     overflow: hidden;
     background-color: #FFFFFF;
-	border-right: 1px solid #959595;
+    border-right: 0.5px solid #959595;
+    border-left: 0.5px solid #959595;
 	border-bottom: 1px solid #959595;
     display: flex;
     flex-direction: column;
 	justify-content: center;
     align-items: center;
     height: 200px;
+    padding: 0;
 
 }
-.cell img{
+/* .cell img{
     position: absolute;
     top: 40%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+} */
+.image{
+    display: flex;
+    height: 70%;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+.image img{
+    width: 65px;
+    height: 65px;
 }
 
+
 .appname {
-    position: absolute;
+    /* position: absolute;
     top: 60%;
     width: 100%;
     height: 40%;
-    padding: 10px;
+    padding: 10px; */
+    /* margin-top: 10px; */
+    width: 100%;
+    /* padding: 10px; */
+    height: 30%;
 	font-family: Adobe Heiti Std R;
 	font-size: 20.5px;
 	font-weight: normal;
@@ -486,3 +508,6 @@ tr{border-bottom: #959595 solid 1.1px;}
 .cell:active{
     background-color: rgb(249, 249, 249);
 }
+
+
+

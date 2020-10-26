@@ -10,13 +10,12 @@
             <#--  <tr><td>  -->
                 <input type="text" id="username" name="username" value="${(account.username!'')}" autocomplete="username" readonly="readonly" style="display:none;">
             <#--  </td></tr>  -->
-
-            <tr><td>
-                <#if password.passwordSet>
+            <#if password.passwordSet>
+                <tr><td>
                     <label for="password" class="control-label">${msg("password")}<span class="required">*</span></label>
                     <input type="password"  id="password" name="password" autofocus autocomplete="current-password">
-                </#if>
-            </td></tr>
+                </td></tr>
+            </#if>
 
             <#--  <tr><td>  -->
                 <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
