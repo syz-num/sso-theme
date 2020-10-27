@@ -295,7 +295,8 @@ hr + .form-horizontal {
 
 .navbar-bottom ul li {
     float: left;
-    width: 25%;
+    /* width: 25%; */
+    width:33.3%; /*更改导航栏为三个元素*/
     height: 100px;
     text-align: center;
     list-style-type: none;
