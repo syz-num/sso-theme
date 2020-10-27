@@ -73,7 +73,8 @@
             <div class="navbar-bottom">
                 <ul class="nav">
                     <li class="<#if active=='account'>active</#if>"><a  href="${url.accountUrl}">${msg("account")}</a></li>
-                    <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if>"><a  href="${url.passwordUrl}">${msg("password")}</a></li></#if>
+                    <#-- 去掉密码页面，对导航栏做更改，去掉密码导航-->
+                    <#--<#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if>"><a  href="${url.passwordUrl}">${msg("password")}</a></li></#if>-->
                     <li class="<#if active=='sessions'>active</#if>"><a href="${url.sessionsUrl}">${msg("sessions")}</a></li>
                     <li class="<#if active=='applications'>active</#if>"><a href="${url.applicationsUrl}">${msg("applications")}</a></li> 
                 </ul>
