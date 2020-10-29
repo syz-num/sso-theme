@@ -295,12 +295,12 @@ hr + .form-horizontal {
 
 .navbar-bottom ul li {
     float: left;
-    /* width: 25%; */
-    width:33.3%; /*更改导航栏为三个元素*/
+    width: 33.33%;
     height: 100px;
     text-align: center;
     list-style-type: none;
     margin: 0px;
+
 }
 .navbar-bottom ul li a {
     display: block;
@@ -336,13 +336,13 @@ hr + .form-horizontal {
 
 .row{
     height: 70px;
-    border-top: 1px #959595 solid;
+    /* border-top: 1px #959595 solid; */
     border-bottom: 1px #959595 solid;
 	display: flex;
 	align-items: center;
     background-color: #FFFFFF;
     margin: 0;
-	margin-top: 25px;
+	/* margin-top: 25px; */
 }
 .row p{
     font-family: MicrosoftYaHei;
@@ -361,7 +361,7 @@ tr{border-bottom: #959595 solid 1.1px;}
 
 .info{
     width: 100%;
-	margin-top: 70px;
+	/* margin-top: 70px; */
     table-layout: fixed;
 }
 .info th {
@@ -421,7 +421,9 @@ tr{border-bottom: #959595 solid 1.1px;}
 	text-align: right;
     color: #000000;
     outline: none;
+    background-color: #fff;
 }
+input[disabled]{background:#fff;opacity:1; color:#b7b7b7}
 
 .action {
 	display: flex;
@@ -445,8 +447,7 @@ tr{border-bottom: #959595 solid 1.1px;}
 }
 
 .application{
-    margin-top: 70px;
-    border-top: 1px solid #959595;
+    /* margin-top: 70px; */
 }
 
 .cell{
