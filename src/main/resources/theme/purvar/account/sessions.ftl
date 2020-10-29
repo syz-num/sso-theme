@@ -1,9 +1,10 @@
 <#import "template.ftl" as layout>
+<title>${msg("sessionsHtmlTitle")}</title>
 <@layout.mainLayout active='sessions' bodyClass='sessions'; section>
 
-    <div class="row">
+    <#--  <div class="row">
         <p>${msg("sessionsHtmlTitle")}</p>
-    </div>
+    </div>  -->
 
     <table class="info">
         <thead>
