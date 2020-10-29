@@ -1,9 +1,10 @@
 <#import "template.ftl" as layout>
+<title>${msg("editAccountHtmlTitle")}</title>
 <@layout.mainLayout active='account' bodyClass='user'; section>
 
-    <div class="row">
+    <#--  <div class="row">
         <p>${msg("editAccountHtmlTitle")}</p>
-    </div>
+    </div>  -->
 
     <form action="${url.accountUrl}" method="post">
         <table class="info">
