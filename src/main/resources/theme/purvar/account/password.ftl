@@ -1,9 +1,11 @@
 <#import "template.ftl" as layout>
+<title>${msg("changePasswordHtmlTitle")}</title>
 <@layout.mainLayout active='password' bodyClass='password'; section>
 
+<#--  
     <div class="row">
         <p>${msg("changePasswordHtmlTitle")}</p>
-    </div>
+    </div>  -->
 
     <form action="${url.passwordUrl}"  method="post">
         <table class="info">
