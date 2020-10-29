@@ -5,11 +5,9 @@
     <#--  <div class="row">
         <p>${msg("applicationsHtmlTitle")}</p>
     </div>  -->
-
     <form action="${url.applicationsUrl}" method="post">
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
         <input type="hidden" id="referrer" name="referrer" value="${stateChecker}">
-        <#--  <div class="appcontainer">  -->
             <div class="application">
                 <#list applications.applications as application>
                     <#if (application.effectiveUrl?has_content)&&(application.effectiveUrl!="${url.accountUrl}")>
@@ -20,7 +18,6 @@
                     </#if>
                 </#list>
             </div>
-        <#--  </div>  -->
     </form>
 
 </@layout.mainLayout>
