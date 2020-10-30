@@ -15,7 +15,7 @@
             <#if !realm.registrationEmailAsUsername>
                 <tr><td>
                     <div class=" ${messagesPerField.printIfExists('username','has-error')}">
-                        <label for="username" class="control-label">${msg("username")}<span class="required">*</span></label> <#if realm.editUsernameAllowed></#if>
+                        <label for="username" class="control-label">${msg("username")}</label> <#if realm.editUsernameAllowed></#if>
                      <input type="text"  id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')}"/>
                     </div>
                 </td></tr>
