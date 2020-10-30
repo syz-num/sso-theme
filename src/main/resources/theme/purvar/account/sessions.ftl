@@ -23,7 +23,7 @@
                         ${client.name}<br/>
                     </#list>
                 </td>
-                <td>${session.lastAccess?datetime('yyyy-MM-dd hh:mm:ss')}</td>
+                <td>${session.lastAccess?string('yyyy-MM-dd hh:mm:ss')}</td>
                 <td>${session.ipAddress}</td>
             </tr>
         </#list>
