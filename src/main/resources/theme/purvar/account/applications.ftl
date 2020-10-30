@@ -13,9 +13,13 @@
                     <#if (application.effectiveUrl?has_content)&&(application.effectiveUrl!="${url.accountUrl}")>
                         <div  class="cell col-xs-3 col-md-3 col-lg-2" onclick="window.open('${application.effectiveUrl}','_self');">
                             <div class="image">
-                                <div >
-                                    <img src="${url.resourcesPath}/img/${application.client.clientId}.png" onerror="this.src='${url.resourcesPath}/img/logo.png;this.οnerrοr=null'" />
-                                </div
+                                <div>
+                                <#if application.client.clientId?index_of('cloud')!=-1>
+                                    <img src="${url.resourcesPath}/img/nextcloud.png" alt="" onerror="this.src='${url.resourcesPath}/img/logo.png;this.οnerrοr=null'"/>
+                                <#else>    
+                                    <img src="${url.resourcesPath}/img/${application.client.clientId}.png" alt="" onerror="this.src='${url.resourcesPath}/img/logo.png;this.οnerrοr=null'" />
+                                </#if>
+                                </div>
                             </div>
                             <div class="appname"><#if application.client.name?has_content>${advancedMsg(application.client.name)}<#else>${application.client.clientId}</#if></div>
                         </div>    
