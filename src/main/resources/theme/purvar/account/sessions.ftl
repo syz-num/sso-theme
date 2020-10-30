@@ -9,22 +9,22 @@
     <table class="info">
         <thead>
         <tr>
-            <td>${msg("clients")}</td>
             <td>${msg("lastAccess")}</td>
             <td>${msg("ip")}</td>
+            <td>${msg("clients")}</td>
         </tr>
         </thead>
 
         <tbody>
         <#list sessions.sessions as session>
             <tr>
+                <td>${session.lastAccess?datetime}</td>
+                <td>${session.ipAddress}</td>
                 <td>
                     <#list session.clients as client>
                         ${client.name}<br/>
                     </#list>
                 </td>
-                <td>${session.lastAccess?datetime}</td>
-                <td>${session.ipAddress}</td>
             </tr>
         </#list>
         </tbody>
