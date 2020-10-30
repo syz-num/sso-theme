@@ -26,7 +26,7 @@
                 <#--  <td>${session.expires?datetime}</td>  -->
                 <td>
                     <#list session.clients as client>
-                        ${client.name}<br/>
+                        ${client}<br/>
                     </#list>
                 </td>
             </tr>
