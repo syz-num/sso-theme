@@ -9,8 +9,10 @@
     <table class="info">
         <thead>
         <tr>
-            <td>${msg("lastAccess")}</td>
             <td>${msg("ip")}</td>
+            <#--  <td>${msg("started")}</td>  -->
+            <td>${msg("lastAccess")}</td>
+            <#--  <td>${msg("expires")}</td>  -->
             <td>${msg("clients")}</td>
         </tr>
         </thead>
@@ -18,8 +20,10 @@
         <tbody>
         <#list sessions.sessions as session>
             <tr>
-                <td>${session.lastAccess?datetime}</td>
                 <td>${session.ipAddress}</td>
+                <#--  <td>${session.started?datetime}</td>  -->
+                <td>${session.lastAccess?datetime}</td>
+                <#--  <td>${session.expires?datetime}</td>  -->
                 <td>
                     <#list session.clients as client>
                         ${client.name}<br/>
